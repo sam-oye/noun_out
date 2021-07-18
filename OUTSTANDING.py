@@ -58,6 +58,8 @@ l51=Label(root,text="COURTSEY: Department of Mathematics")
 l51.grid(row=8,column=1)
 
 
+
+
 e1=Entry(root, width= 125, bg="#00FF00")
 
 e1.grid(row=2,column=1,pady= (w-250, 0))
@@ -128,6 +130,8 @@ def run():
     ws_sheet1.Cells(1,"M").Value = "THE REAL OUTSATNDING COURSES"
     ws_sheet1.Cells(1,"N").Value = "NUMBER OF OUTSTANDING COURSES"
     ws_sheet1.Cells(1,"O").Value = "NUMBER OF PASSED COURSES"
+
+    n=2
     
     def spcomma(string):            
       
@@ -159,15 +163,20 @@ def run():
         Re2=R
         return Re2
         
-              
+    pro_list=[]         
     
     
     def notdone(A,B):          
         notdone=[]
         for i in A:
+            
+                
             if i not in B:
                 
+                    
                 notdone.append(i)
+                
+
         return notdone
     
     
@@ -299,18 +308,26 @@ def run():
     n1=1
     n2=1
     n3=1
-    while n1<10000:
-        if  str(ws_sheet1.Cells(n2, 1))=="None":
+    # while n1<10000:
+    #     if  str(ws_sheet1.Cells(n2, 1))=="None":
             
-            n1=10000
-        else:
-            n2+=1
-            n3+=1
+    #         n1=10000
+    #     else:
+    #         n2+=1
+    #         n3+=1
           
     
+     
+
+
     
+
+    nn=2
+
+
+    #for n in range(2,n2):
+    while str(ws_sheet1.Cells(n, 1))!="None":
     
-    for n in range(2,n2):
         C2=(ws_sheet1.Cells(n, 10))  
         C= str(C2)  
         C1=[]       
@@ -353,18 +370,29 @@ def run():
             ws_sheet1.Cells(n,"O").Value = 0
         
          
-                
-        # if Elc[len(Elc)-1] not in out:
+            
+        if Elc[len(Elc)-1] not in out:
+            pro_list.append(n)
+             #ws_sheet1.Range(ws_sheet1.Cells(n,1),ws_sheet1.cells(n,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(nn,1),ws_sheet2.cells(nn,18)))
+        #     nn+=1
         #     n3+=1
         #     ws_sheet1.Range(ws_sheet1.Cells(n,1),ws_sheet1.cells(n,18)).Copy(ws_sheet1.Range(ws_sheet1.Cells(n3,1),ws_sheet1.cells(n3,18))) 
+        n+=1
 
         
 
-       
+        
     wb.Sheets.Add().Name="With Project"
     ws_sheet2 = wb.Worksheets('With Project')
-    ws_sheet1.Range(ws_sheet1.Cells(1,1),ws_sheet1.cells(1,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(1,1),ws_sheet2.cells(1,18))) 
-    ws_sheet1.Range(ws_sheet1.Cells(n2+1,1),ws_sheet1.cells(n3,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(2,1),ws_sheet2.cells(n3-n2+1,18))) 
+    ws_sheet1.Range(ws_sheet1.Cells(1,1),ws_sheet1.cells(1,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(1,1),ws_sheet2.cells(1,18)))
+    # # #ws_sheet1.Range(ws_sheet1.Cells(n2+1,1),ws_sheet1.cells(n3,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(2,1),ws_sheet2.cells(n3-n2+1,18)))
+    for i in pro_list:
+            
+        ws_sheet1.Range(ws_sheet1.Cells(i,1),ws_sheet1.cells(i,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(nn,1),ws_sheet2.cells(nn,18)))
+        nn+=1
+    
+    # 
+    #ws_sheet1.Range(ws_sheet1.Cells(n2+1,1),ws_sheet1.cells(n3,18)).Copy(ws_sheet2.Range(ws_sheet2.Cells(2,1),ws_sheet2.cells(n3-n2+1,18))) 
 
         
     
