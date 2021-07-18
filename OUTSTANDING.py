@@ -181,12 +181,12 @@ def run():
     
     
     
-    def fail(A):                
-        B=[]
-        for i in A:
-            if 'F' in i[1]:
-                B.append(i[0])
-        return B
+    # def fail(A):                
+    #     B=[]
+    #     for i in A:
+    #         if 'F' in i[1]:
+    #             B.append(i[0])
+    #     return B
     
     
     
@@ -209,91 +209,91 @@ def run():
                 B.append(i)
         return B
     
-    def GP(R,U): 
+    # def GP(R,U): 
     
-        TR=0
-        TUNIT=0
+    #     TR=0
+    #     TUNIT=0
     
-        for i in U:
-            TUNIT=TUNIT+i[1]
+    #     for i in U:
+    #         TUNIT=TUNIT+i[1]
         
-        for i in R:
-            for j in U:
-                if i[0]==j[0]:
+    #     for i in R:
+    #         for j in U:
+    #             if i[0]==j[0]:
                     
                     
                     
-                    if i[1]=='A':
-                        Y=5
-                    elif i[1]=='B':
-                        Y=4
-                    elif i[1]=='C':
-                        Y=3
-                    elif i[1]=='D':
-                        Y=2
-                    elif i[1]=='E':
-                        Y=1
-                    elif i[1]=='F':
-                        Y=0
+    #                 if i[1]=='A':
+    #                     Y=5
+    #                 elif i[1]=='B':
+    #                     Y=4
+    #                 elif i[1]=='C':
+    #                     Y=3
+    #                 elif i[1]=='D':
+    #                     Y=2
+    #                 elif i[1]=='E':
+    #                     Y=1
+    #                 elif i[1]=='F':
+    #                     Y=0
                     
-                    x=Y*j[1]
-                    TR=TR+x
+    #                 x=Y*j[1]
+    #                 TR=TR+x
                 
-        if TUNIT !=0:
-            GP=TR/TUNIT 
-            return GP
-        else:
-            return 0
+    #     if TUNIT !=0:
+    #         GP=TR/TUNIT 
+    #         return GP
+    #     else:
+    #         return 0
     
-    def gp4(c,reg1):  
-        p=[]
-        for i in c:        
-            for j in reg1:
-                if i[0]==j[0]:
-                    p.append(j)
-        return p
+    # def gp4(c,reg1):  
+    #     p=[]
+    #     for i in c:        
+    #         for j in reg1:
+    #             if i[0]==j[0]:
+    #                 p.append(j)
+    #     return p
     
-    def Su(R,U):
-        TR=0
-        for i in R:
-            for j in U:
-                if i[0]==j[0]:
-                    TR=TR+j[1]
-        return TR
+    # def Su(R,U):
+    #     TR=0
+    #     for i in R:
+    #         for j in U:
+    #             if i[0]==j[0]:
+    #                 TR=TR+j[1]
+    #     return TR
     
-    def Su1(R,U):
-        TR=0
-        for i in R:
-            for j in U:
-                if i==j[0]:
-                    TR=TR+j[1]
-        return TR
+    # def Su1(R,U):
+    #     TR=0
+    #     for i in R:
+    #         for j in U:
+    #             if i==j[0]:
+    #                 TR=TR+j[1]
+    #     return TR
                
-    def CCode(C1):
+    # def CCode(C1):
         
-        for i in C1:
-            if i[0]=="GST122":
-                i[0]="GST203"
-            if i[0]=="MTH142":
-                i[0]="MTH102"
-            if i[0]=="PHY132":
-                i[0]="PHY102"
-            if i[0]=="CHM132":
-                i[0]="CHM102"
+    #     for i in C1:
+    #         if i[0]=="GST122":
+    #             i[0]="GST203"
+    #         if i[0]=="MTH142":
+    #             i[0]="MTH102"
+    #         if i[0]=="PHY132":
+    #             i[0]="PHY102"
+    #         if i[0]=="CHM132":
+    #             i[0]="CHM102"
             
         
     
-    def CPassed(passed):
-        for i in passed:
+    # def CPassed(passed):
+    #     for i in passed:
             
-            if i=="GST122":
-                i="GST203"
-            if i=="MTH142":
-                i="MTH102"
-            if i=="PHY132":
-                i="PHY102"
-            if i=="CHM132":
-                i="CHM102"
+    #         if i=="GST122":
+    #             i="GST203"
+    #         if i=="MTH142":
+    #             i="MTH102"
+    #         if i=="PHY132":
+    #             i="PHY102"
+    #         if i=="CHM132":
+    #             i="CHM102"
 
     def save():
         try:
