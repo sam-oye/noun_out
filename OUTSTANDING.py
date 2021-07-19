@@ -16,14 +16,13 @@ root=tk.Tk()
 
 
 
-width, height = root.winfo_screenwidth, root.winfo_screenheight
 
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
-#root.resizable(0, 0)
+root.resizable(0, 0)
 
 
 root.wm_title("Graduating List and Outstanding")
-#root.wm_iconbitmap('001.ico')
+root.wm_iconbitmap('001.ico')
 w= 300
 l1=Label(root,text="        ")
 l1.grid(row=0,column=0,padx= (w, 0)  )
